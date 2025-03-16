@@ -69,58 +69,10 @@ const page = ({ params }) => {
           height={720}
           alt=""
         />
-        <h1 className="my-8 text-[26px] font-semibold">Introduction:</h1>
-        <p>{data.description}</p>
-        <h3 className="my-5 text-[18px] font-semibold">
-          Step 1: Self-Reflection and Goal Setting
-        </h3>
-        <p className="my-3 ">
-          Before you can manage your lifestyle, you must thave a clear
-          understanding of what you want to achieve. Start by reflecting on your
-          values, aspirations and long-term goals.
-        </p>
-        <p className="my-3 ">
-          Before you can manage your lifestyle, you must thave a clear
-          understanding of what you want to achieve. Start by reflecting on your
-          values, aspirations and long-term goals.
-        </p>
-        <h3 className="my-5 text-[18px] font-semibold">
-          Step 2: Self-Reflection and Goal Setting
-        </h3>
-        <p className="my-3 ">
-          Before you can manage your lifestyle, you must thave a clear
-          understanding of what you want to achieve. Start by reflecting on your
-          values, aspirations and long-term goals.
-        </p>
-        <p className="my-3 ">
-          Before you can manage your lifestyle, you must thave a clear
-          understanding of what you want to achieve. Start by reflecting on your
-          values, aspirations and long-term goals.
-        </p>
-        <h3 className="my-5 text-[18px] font-semibold">
-          Step 3: Self-Reflection and Goal Setting
-        </h3>
-        <p className="my-3 ">
-          Before you can manage your lifestyle, you must thave a clear
-          understanding of what you want to achieve. Start by reflecting on your
-          values, aspirations and long-term goals.
-        </p>
-        <p className="my-3 ">
-          Before you can manage your lifestyle, you must thave a clear
-          understanding of what you want to achieve. Start by reflecting on your
-          values, aspirations and long-term goals.
-        </p>
-        <h3 className="my-5 text-[18px] font-semibold">Conclusion: </h3>
 
-        <p className="my-3 ">
-          Managing your lifestyle is a journey that requires commitment and
-          self-awareness. By following this step-by-step guide. you can take
-          control of your life and make meaningful changes that lead to a more
-          balanced and fulfulling lifestyle. Remember that it's okay to seek
-          support and guidance from professionals or mentors along the way .
-          Your happiness starts here.{" "}
-        </p>
-        <div className="my-24">
+          <div className="blog-content" dangerouslySetInnerHTML={{__html:data.description}}></div>
+
+       <div className="my-24">
           <p className="text-black font font-semibold my-4">
             Share this article on social media
           </p>
