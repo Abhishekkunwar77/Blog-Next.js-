@@ -4,20 +4,20 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 const Header = () => {
-  const [email, setEmail]=useState("");
+  const [email, setEmail] = useState("");
 
-const onSubmitHandler= async (e) => {
+  const onSubmitHandler = async (e) => {
     e.preventDefault();
-    const formData=new FormData();
-    formData.append("email",email);
-    const response= await axios.post('/api/email',formData);
+    const formData = new FormData();
+    formData.append("email", email);
+    const response = await axios.post("/api/email", formData);
     if (response.data.success) {
       toast.success(response.data.msg);
       setEmail("");
-    }else{
+    } else {
       toast.error("Error");
     }
-}
+  };
 
   return (
     <div className="py-5 px-5 md:px-12 lg:px-28">
@@ -26,8 +26,8 @@ const onSubmitHandler= async (e) => {
           src={assets.logo}
           width={180}
           alt=""
-          className="w-[130px] sm:w-auto cursor-pointer" 
-          onClick={() => window.location.reload()} 
+          className="w-[130px] sm:w-auto cursor-pointer"
+          onClick={() => window.location.reload()}
         />
         <button
           className="flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-solid border-black shadow-[-7px_7px_0px_#16a34a]

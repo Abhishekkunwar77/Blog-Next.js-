@@ -11,14 +11,16 @@ LoadDB();
 //api endpoint to get all blogs
 export async function GET(request) {
   const blogId = request.nextUrl.searchParams.get("id");
+
   if (blogId) {
     const blog = await BlogModel.findById(blogId);
     return NextResponse.json(blog);
   } else {
-    const blogs = await BlogModel.find({});
+    const blogs = await BlogModel.find({}).sort({ date: -1 }); // Sort by latest first
     return NextResponse.json({ blogs });
   }
 }
+
 
 // api endpoint for uploading blogs
 
@@ -38,6 +40,7 @@ export async function POST(request) {
     author: `${formData.get("author")}`,
     image: `${imgUrl}`,
     authorImg: `${formData.get("authorImg")}`,
+    date: new Date(), 
   };
   await BlogModel.create(blogData);
   console.log("Blog Saved");
