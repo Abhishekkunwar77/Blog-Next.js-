@@ -31,7 +31,7 @@ const BlogTableItem = ({
           className="items-center gap-3 hidden sm:flex px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
         >
           <Image
-            src="/Assets/profile_icon.png"
+            src="/author_img.png"
             alt="Profile Icon"
             width={50}
             height={50}

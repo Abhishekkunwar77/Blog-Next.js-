@@ -17,7 +17,6 @@ import blog_pic_16 from './blog_pic_16.png';
 import facebook_icon from './facebook_icon.png'
 import googleplus_icon from './googleplus_icon.png'
 import twitter_icon from './twitter_icon.png'
-import profile_icon from './profile_icon.png'
 import logo from './logo.png'
 import arrow from './arrow.png'
 import logo_light from './logo_light.png'
@@ -26,6 +25,8 @@ import add_icon from './add_icon.png'
 import email_icon from './email_icon.png'
 import upload_area from './upload_area.png'
 import logo_white from './logo_white.png'
+import profile_icon from './profile_icon.png'
+import author_img from "./author_img.png"
 
 export const assets = {
     facebook_icon,
@@ -39,7 +40,8 @@ export const assets = {
     add_icon,
     email_icon,
     upload_area,
-    logo_white
+    logo_white,
+    author_img
     }
 
     export const blog_data = [{

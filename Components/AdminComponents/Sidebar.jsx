@@ -23,7 +23,7 @@ const Sidebar = () => {
             className=" mt-5 flex items-center border border-green gap-3 font-medium px-3 py-2 bg-white shadow-[-5px_5px_0px_#16a34a] text-green-500"
           >
             <Image src={assets.blog_icon} alt="" width={28} />
-            <p>Blog ist</p>
+            <p>Blog List</p>
           </Link>
           <Link
             href={"/admin/subscriptions"}

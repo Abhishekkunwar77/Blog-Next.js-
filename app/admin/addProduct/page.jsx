@@ -4,16 +4,15 @@ import axios from "axios";
 import Image from "next/image";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-
 const page = () => {
   const [data, setData] = useState({
     title: "",
     description: "",
     category: "Startup",
     author: "Abhishek Kunwar",
-    authorImg: "/author_img.png",
+    authorImg:"/author_img.png",
   });
-const [image, setImage] = useState(null);
+  const [image, setImage] = useState(null);
 
   const onChangeHandler = (event) => {
     const name = event.target.name;
@@ -30,19 +29,19 @@ const [image, setImage] = useState(null);
     formData.append("author", data.author);
     formData.append("authorImg", data.authorImg);
     formData.append("image", image);
-    const response = await axios.post('/api/blog',formData);
+    const response = await axios.post("/api/blog", formData);
     if (response.data.success) {
-      toast.success(response.data.msg)
+      toast.success(response.data.msg);
       setImage(false);
       setData({
         title: "",
         description: "",
         category: "Startup",
         author: "Abhishek Kunwar",
-        authorImg: "/author_img.png",
+        authorImg: "/author_img.png"
       });
-    }else{
-      toast.error("Error")
+    } else {
+      toast.error("Error");
     }
   };
 
@@ -99,7 +98,10 @@ const [image, setImage] = useState(null);
           <option value="Lifestyle">Lifestyle</option>
         </select>
         <br />
-        <button className="mt-8 w-40 h-12 bg-green-600 text-white" type="submit">
+        <button
+          className="mt-8 w-40 h-12 bg-green-600 text-white"
+          type="submit"
+        >
           Add
         </button>
       </form>
