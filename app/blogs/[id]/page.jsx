@@ -6,6 +6,13 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import {use} from "react"
+import {
+  FaFacebook,
+  FaTwitter,
+  FaLinkedin,
+  FaInstagram,
+
+} from "react-icons/fa";
 
 const page = ({ params }) => {
   const [data, setdata] = useState(null);
@@ -79,10 +86,28 @@ const page = ({ params }) => {
           <p className="text-black font font-semibold my-4">
             Share this article on social media
           </p>
-          <div className="flex">
-            <Image src={assets.facebook_icon} width={50} alt="" />
-            <Image src={assets.twitter_icon} width={50} alt="" />
-            <Image src={assets.googleplus_icon} width={50} alt="" />
+          <div className="flex gap-2">
+            <a href="https://www.facebook.com" target="_blank">
+              <FaFacebook
+                size={28}
+                className="hover:text-blue-500 transition"
+              />
+            </a>
+            <a href="https://x.com" target="_blank">
+              <FaTwitter size={28} className="hover:text-blue-400 transition" />
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+              <FaInstagram
+                size={28}
+                className="hover:text-pink-500 transition"
+              />
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank">
+              <FaLinkedin
+                size={28}
+                className="hover:text-blue-600 transition"
+              />
+            </a>
           </div>
         </div>
       </div>

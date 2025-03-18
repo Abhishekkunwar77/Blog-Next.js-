@@ -61,35 +61,38 @@ const Footer = () => {
       <div className="hidden sm:flex gap-6 text-lg">
         <button
           onClick={() => togglePopup("about")}
-          className="hover:text-gray-400 transition"
+          className="hover:text-gray-400 transition cursor-pointer"
         >
           About
         </button>
-        <a href="#" className="hover:text-gray-400 transition">
+        <a href="#" className="hover:text-gray-400 transition cursor-pointer">
           Privacy Policy
         </a>
         <button
           onClick={() => togglePopup("contact")}
-          className="hover:text-gray-400 transition"
+          className="hover:text-gray-400 transition cursor-pointer"
         >
           Contact
         </button>
       </div>
       {/* Right Section - Social Icons */}
       <div className="flex gap-4 mt-4 sm:mt-0">
-        <a href="https://www.facebook.com" target="_blank">
+        <a href="https://www.facebook.com/nishu.kunwar.31" target="_blank">
           <FaFacebook size={28} className="hover:text-blue-500 transition" />
         </a>
-        <a href="https://www.twitter.com" target="_blank">
+        <a href="https://x.com/kunwar_abh29597" target="_blank">
           <FaTwitter size={28} className="hover:text-blue-400 transition" />
         </a>
-        <a href="https://www.instagram.com" target="_blank">
+        <a href="https://www.instagram.com/abhishek_kunwar23/" target="_blank">
           <FaInstagram size={28} className="hover:text-pink-500 transition" />
         </a>
-        <a href="https://www.linkedin.com" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/abhishek-kunwar55/"
+          target="_blank"
+        >
           <FaLinkedin size={28} className="hover:text-blue-600 transition" />
         </a>
-        <a href="https://www.github.com" target="_blank">
+        <a href="https://github.com/Abhishekkunwar77" target="_blank">
           <FaGithub size={28} className="hover:text-gray-500 transition" />
         </a>
       </div>
@@ -103,7 +106,7 @@ const Footer = () => {
 
             {popupType === "about" && (
               <div className="text-black">
-                <h2 className="text-xl font-semibold mb-4 text-center text-green-600">
+                <h2 className="text-xl font-semibold mb-4 text-center text-green-600 ">
                   About Us
                 </h2>
                 <p>

@@ -26,7 +26,8 @@ const onSubmitHandler= async (e) => {
           src={assets.logo}
           width={180}
           alt=""
-          className="w-[130px] sm:w-auto"
+          className="w-[130px] sm:w-auto cursor-pointer" 
+          onClick={() => window.location.reload()} 
         />
         <button
           className="flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-solid border-black shadow-[-7px_7px_0px_#16a34a]
@@ -40,7 +41,7 @@ const onSubmitHandler= async (e) => {
         <h1 className="text-3xl sm:text-5xl font-medium">Latest Blogs</h1>
         <p className="mt-10 max-w-[740px] m-auto text-xs sm:text-base">
           This isn’t just about coding and business—it’s about leveling up in
-          real life.  <br></br>Forget excuses : 
+          real life. <br></br>Forget excuses :
           <code> execute(idea) || return excuses;</code>{" "}
         </p>
         <form

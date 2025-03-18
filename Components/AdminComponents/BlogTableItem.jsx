@@ -33,8 +33,9 @@ const BlogTableItem = ({
           <Image
             src="/author_img.png"
             alt="Profile Icon"
-            width={50}
-            height={50}
+            width={40}
+            height={40}
+            style={{ borderRadius: "50%" }}
           />
 
           <p>{author ? author : "No Author"}</p>
