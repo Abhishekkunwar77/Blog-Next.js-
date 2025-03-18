@@ -29,7 +29,7 @@ const onSubmitHandler= async (e) => {
           className="w-[130px] sm:w-auto"
         />
         <button
-          className="flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-solid border-black shadow-[-7px_7px_0px_#000000]
+          className="flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-solid border-black shadow-[-7px_7px_0px_#16a34a]
 "
         >
           Get Started
@@ -39,13 +39,29 @@ const onSubmitHandler= async (e) => {
       <div className=" text-center my-8">
         <h1 className="text-3xl sm:text-5xl font-medium">Latest Blogs</h1>
         <p className="mt-10 max-w-[740px] m-auto text-xs sm:text-base">
-          Lorem ipsum is simply dummy text of the printing and typesetting
-          industry. lorem ipsum has been the indistry's standard dumy text ever
+          This isn’t just about coding and business—it’s about leveling up in
+          real life.  <br></br>Forget excuses : 
+          <code> execute(idea) || return excuses;</code>{" "}
         </p>
-        <form onSubmit={onSubmitHandler} className="flex justify-between max-w-[500px] scale-75 sm:scale-100 mx-auto mt-10 border border-black shadow-[-7px_7px_0px_#000000]" action="">
-          <input onChange={(e)=>setEmail(e.target.value)} value={email} type="email" placeholder="Enter your email" className="pl-4 outline-none "/>
-          <button type="submit" className="border-l border-black py-4 px-4 sm:px-8 active:bg-gray-600 active:text-white">Subscribe</button>
-           
+        <form
+          onSubmit={onSubmitHandler}
+          className="flex justify-between max-w-[500px] scale-75 sm:scale-100 mx-auto mt-10 border border-black shadow-[-7px_7px_0px_#16a34a]"
+          action=""
+        >
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            type="email"
+            placeholder="Enter your email"
+            required
+            className="pl-4 outline-none "
+          />
+          <button
+            type="submit"
+            className="border-l border-black py-4 px-4 sm:px-8 active:bg-gray-600 active:text-white"
+          >
+            Subscribe
+          </button>
         </form>
       </div>
     </div>

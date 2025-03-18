@@ -10,7 +10,7 @@ const page = () => {
     title: "",
     description: "",
     category: "Startup",
-    author: "Alex Bennet",
+    author: "Abhishek Kunwar",
     authorImg: "/author_img.png",
   });
 const [image, setImage] = useState(null);
@@ -38,7 +38,7 @@ const [image, setImage] = useState(null);
         title: "",
         description: "",
         category: "Startup",
-        author: "Alex Bennet",
+        author: "Abhishek Kunwar",
         authorImg: "/author_img.png",
       });
     }else{
@@ -99,7 +99,7 @@ const [image, setImage] = useState(null);
           <option value="Lifestyle">Lifestyle</option>
         </select>
         <br />
-        <button className="mt-8 w-40 h-12 bg-black text-white" type="submit">
+        <button className="mt-8 w-40 h-12 bg-green-600 text-white" type="submit">
           Add
         </button>
       </form>

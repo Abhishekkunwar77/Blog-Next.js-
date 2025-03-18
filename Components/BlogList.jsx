@@ -23,7 +23,7 @@ const BlogList = () => {
         <button
           onClick={() => setMenu("All")}
           className={
-            menu === "All" ? "bg-black text-white py-1 px-4 rounded-sm" : ""
+            menu === "All" ? "bg-green-700 text-white py-1 px-4 rounded-sm" : ""
           }
         >
           All
@@ -31,7 +31,7 @@ const BlogList = () => {
         <button
           className={
             menu === "Technology"
-              ? "bg-black text-white py-1 px-4 rounded-sm"
+              ? "bg-green-700 text-white py-1 px-4 rounded-sm"
               : ""
           }
           onClick={() => setMenu("Technology")}
@@ -40,7 +40,9 @@ const BlogList = () => {
         </button>
         <button
           className={
-            menu === "Startup" ? "bg-black text-white py-1 px-4 rounded-sm" : ""
+            menu === "Startup"
+              ? "bg-green-700 text-white py-1 px-4 rounded-sm"
+              : ""
           }
           onClick={() => setMenu("Startup")}
         >
@@ -49,7 +51,7 @@ const BlogList = () => {
         <button
           className={
             menu === "Lifestyle"
-              ? "bg-black text-white py-1 px-4 rounded-sm"
+              ? "bg-green-700 text-white py-1 px-4 rounded-sm"
               : ""
           }
           onClick={() => setMenu("Lifestyle")}
@@ -58,18 +60,20 @@ const BlogList = () => {
         </button>
       </div>
       <div className="flex flex-wrap justify-around gap-1 gap-y-10 mb-16 xl:mx-24">
-        {blogs.filter((item)=> menu==="All"?true:item.category===menu).map((item, index) => {
-          return (
-            <BlogItem
-              key={index}
-              image={item.image}
-              title={item.title}
-              description={item.description}
-              category={item.category}
-              id={item._id}
-            />
-          );
-        })}
+        {blogs
+          .filter((item) => (menu === "All" ? true : item.category === menu))
+          .map((item, index) => {
+            return (
+              <BlogItem
+                key={index}
+                image={item.image}
+                title={item.title}
+                description={item.description}
+                category={item.category}
+                id={item._id}
+              />
+            );
+          })}
       </div>
     </div>
   );

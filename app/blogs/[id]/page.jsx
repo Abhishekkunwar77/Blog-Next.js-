@@ -40,9 +40,9 @@ const page = ({ params }) => {
               className="w-[130px] sm:w-auto"
             />
           </Link>
-          <button className="flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-black shadow-[-7px_7px_0px_#000000]">
+          <button className="flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-green-500 shadow-[-7px_7px_0px_#22c55e] text-green-700">
             Get Started
-            <Image src={assets.arrow} alt="" />
+            <Image src={assets.arrow} alt="Arrow icon" width={20} height={20} />
           </button>
         </div>
         <div className="text-center my-24">
@@ -70,9 +70,12 @@ const page = ({ params }) => {
           alt=""
         />
 
-          <div className="blog-content" dangerouslySetInnerHTML={{__html:data.description}}></div>
+        <div
+          className="blog-content"
+          dangerouslySetInnerHTML={{ __html: data.description }}
+        ></div>
 
-       <div className="my-24">
+        <div className="my-24">
           <p className="text-black font font-semibold my-4">
             Share this article on social media
           </p>

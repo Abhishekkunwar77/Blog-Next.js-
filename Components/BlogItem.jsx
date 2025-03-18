@@ -5,17 +5,17 @@ import React from 'react'
 
 const BlogItem = ({title, description, category,image, id}) => {
   return (
-    <div className="max-w-[330px] sm:max-w-[300px] bg-white border border-black hover:shadow-[-7px_7px_0px_#000000]">
+    <div className="max-w-[330px] sm:max-w-[300px] bg-white border border-green hover:shadow-[-7px_7px_0px_#16a34a]">
       <Link href={`/blogs/${id}`}>
         <Image
           src={image}
           alt=""
           width={400}
           height={400}
-          className=" border-b border-black"
+          className=" border-b border-green"
         />
       </Link>
-      <p className="ml-5 mt-5 px-1 inline-block bg-black text-white text-small">
+      <p className="ml-5 mt-5 px-1 inline-block bg-green-500 text-white text-small">
         {category}
       </p>
       <div className="p-5">
@@ -26,7 +26,7 @@ const BlogItem = ({title, description, category,image, id}) => {
         dangerouslySetInnerHTML={{__html:description.slice(0,120)}}>
          
         </p>
-        <Link href={`/blogs/${id}`} className="inline-flex items-center py-2 font-semibold text-center">
+        <Link href={`/blogs/${id}`} className="inline-flex items-center py-2 font-semibold text-center ">
           Read more
           <Image src={assets.arrow} alt="" width={12} className="ml-2" />
         </Link>
