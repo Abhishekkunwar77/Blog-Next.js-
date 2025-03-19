@@ -42,7 +42,11 @@ const Header = () => {
         <p className="mt-10 max-w-[740px] m-auto text-xs sm:text-base">
           This isn’t just about coding and business—it’s about leveling up in
           real life. <br></br>Forget excuses :
-          <code> execute(idea) || return excuses;</code>{" "}
+          <code> execute(idea) || return excuses;</code>
+          <br />
+          <strong className="text-lg">
+            Discover insightful blogs curated for you!
+          </strong>
         </p>
         <form
           onSubmit={onSubmitHandler}
