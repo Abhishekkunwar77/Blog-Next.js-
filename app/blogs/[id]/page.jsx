@@ -47,7 +47,7 @@ const page = ({ params }) => {
               className="w-[130px] sm:w-auto"
             />
           </Link>
-          <button className="flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-green-500 shadow-[-7px_7px_0px_#22c55e] text-green-700 max-w-min">
+          <button className="flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-green-500 shadow-[-7px_7px_0px_#22c55e] text-green-700 ">
             Get Started
             <Image src={assets.arrow} alt="Arrow icon" width={20} height={20} />
           </button>
@@ -57,7 +57,7 @@ const page = ({ params }) => {
             {data.title}
           </h1>
           <Image
-            className="mx-auto mt-6 border border-white rounded-full w-16 h-16"
+            className="mx-auto mt-6 border border-white rounded-full "
             src={data.authorImg}
             width={60}
             height={60}
