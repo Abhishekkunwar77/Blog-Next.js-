@@ -96,6 +96,10 @@ const page = () => {
           <option value="Startup">Startup</option>
           <option value="Technology">Technology</option>
           <option value="Lifestyle">Lifestyle</option>
+          <option value="Education">Education</option>
+          <option value="Business">Business</option>
+          <option value="Travel">Travel</option>
+          <option value="Entertainment">Entertainment</option>
         </select>
         <br />
         <button

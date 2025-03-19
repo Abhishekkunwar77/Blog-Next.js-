@@ -51,14 +51,14 @@ const Footer = () => {
   };
 
   return (
-    <div className="flex flex-col sm:flex-row justify-between items-center bg-black py-6 px-8 text-white">
+    <div className="flex flex-col sm:flex-row justify-between items-center bg-black  px-8 py-1 text-white">
       <div className="flex flex-col items-center sm:items-start">
         <Image src={assets.logo_white} alt="Logo" width={120} height={40} />
         <p className="text-sm mt-2">
           &copy; {new Date().getFullYear()} All rights reserved.
         </p>
       </div>
-      <div className="hidden sm:flex gap-6 text-lg">
+      <div className="flex flex-wrap justify-center gap-3 sm:gap-6 text-sm sm:text-lg my-4 sm:my-10 px-4">
         <button
           onClick={() => togglePopup("about")}
           className="hover:text-gray-400 transition cursor-pointer"

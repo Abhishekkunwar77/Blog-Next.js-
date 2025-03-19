@@ -4,66 +4,68 @@ import BlogItem from "./BlogItem";
 import axios from "axios";
 
 const BlogList = () => {
+  const [menu, setMenu] = useState("All");
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(false); // State for loading
 
-  const [menu, setMenu]=useState("All");
-  const [blogs, setBlogs]=useState([]);
-  const fetchBlogs= async ()=>{
-    const response =await axios.get('/api/blog');
-    setBlogs(response.data.blogs);
-    console.log(response.data.blogs);
-  }
+  const fetchBlogs = async () => {
+    setLoading(true); // Start loading
+    try {
+      const response = await axios.get("/api/blog");
+      setBlogs(response.data.blogs);
+    } catch (error) {
+      console.error("Error fetching blogs:", error);
+    }
+    setLoading(false); // Stop loading
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchBlogs();
-  },[])
+  }, []);
+
+  const filteredBlogs = blogs.filter((item) =>
+    menu === "All" ? true : item.category === menu
+  );
 
   return (
     <div>
-      <div className="flex justify-center gap-6 my-10">
-        <button
-          onClick={() => setMenu("All")}
-          className={
-            menu === "All" ? "bg-green-700 text-white py-1 px-4 rounded-sm" : ""
-          }
-        >
-          All
-        </button>
-        <button
-          className={
-            menu === "Technology"
-              ? "bg-green-700 text-white py-1 px-4 rounded-sm"
-              : ""
-          }
-          onClick={() => setMenu("Technology")}
-        >
-          Technology
-        </button>
-        <button
-          className={
-            menu === "Startup"
-              ? "bg-green-700 text-white py-1 px-4 rounded-sm"
-              : ""
-          }
-          onClick={() => setMenu("Startup")}
-        >
-          Startup
-        </button>
-        <button
-          className={
-            menu === "Lifestyle"
-              ? "bg-green-700 text-white py-1 px-4 rounded-sm"
-              : ""
-          }
-          onClick={() => setMenu("Lifestyle")}
-        >
-          Lifestyle
-        </button>
+      {/* Category Buttons */}
+      <div className="flex flex-wrap justify-center gap-3 md:gap-6 my-6 md:my-10 px-4 overflow-x-auto">
+        {[
+          "All",
+          "Technology",
+          "Startup",
+          "Lifestyle",
+          "Education",
+          "Business",
+          "Travel",
+          "Entertainment",
+        ].map((category) => (
+          <button
+            key={category}
+            onClick={() => {
+              setMenu(category);
+              setLoading(true); // Show loader when changing category
+              setTimeout(() => setLoading(false), 500); // Simulate lazy loading
+            }}
+            className={`py-1 px-4 rounded-sm ${
+              menu === category ? "bg-green-700 text-white" : ""
+            }`}
+          >
+            {category}
+          </button>
+        ))}
       </div>
-      <div className="flex flex-wrap justify-around gap-1 gap-y-10 mb-16 xl:mx-24">
-        {blogs
-          .filter((item) => (menu === "All" ? true : item.category === menu))
-          .map((item, index) => {
-            return (
+
+      {/* Lazy Loading Spinner */}
+      {loading ? (
+        <div className="flex justify-center my-10">
+          <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-green-700"></div>
+        </div>
+      ) : (
+        <div className="flex flex-wrap justify-around gap-1 gap-y-10 mb-16 xl:mx-24">
+          {filteredBlogs.length > 0 ? (
+            filteredBlogs.map((item, index) => (
               <BlogItem
                 key={index}
                 image={item.image}
@@ -72,9 +74,19 @@ const BlogList = () => {
                 category={item.category}
                 id={item._id}
               />
-            );
-          })}
-      </div>
+            ))
+          ) : (
+            <div className="text-center text-gray-600 text-lg w-full">
+              <marquee>
+                <mark>
+                  No blogs found in this category. But don’t worry, we’re
+                  working on it!
+                </mark>
+              </marquee>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };
