@@ -53,7 +53,7 @@ const onSubmitHandler= async (e) => {
         </p>
         <form
           onSubmit={onSubmitHandler}
-          className="flex justify-between max-w-[500px] scale-75 sm:scale-100 mx-auto mt-10 border border-black shadow-[-7px_7px_0px_#16a34a]"
+          className="flex justify-between  max-w-[400px] scale-75 sm:scale-100 mx-auto mt-10 border border-black shadow-[-7px_7px_0px_#16a34a]"
           action=""
         >
           <input
@@ -62,11 +62,11 @@ const onSubmitHandler= async (e) => {
             type="email"
             placeholder="Enter your email"
             required
-            className="pl-4 outline-none "
+            className="min-w-[210px] pl-5 outline-none "
           />
           <button
             type="submit"
-            className="border-l border-black py-4 px-4 sm:px-8 active:bg-gray-600 active:text-white"
+            className="border-l border-black py-4  sm:px-8 active:bg-gray-600 active:text-white hover:cursor-pointer hover:bg-green-600/15"
           >
             Subscribe
           </button>
