@@ -8,7 +8,7 @@ const SubsTableItem = ({ email, deleteEmail, mongoId, date }) => {
 
   const handleDelete = () => {
     if (selectedEmail) {
-      deleteEmail(selectedEmail); // ✅ Delete email
+      deleteEmail(selectedEmail);
       setShowConfirm(false);
       setSelectedEmail(null);
     }
@@ -50,7 +50,6 @@ const SubsTableItem = ({ email, deleteEmail, mongoId, date }) => {
   );
 };
 
-// ✅ Reusable Confirmation Modal Component
 const ConfirmationModal = ({ onClose, onConfirm }) => {
   return (
     <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-lg z-50 border-2 border-green-500">

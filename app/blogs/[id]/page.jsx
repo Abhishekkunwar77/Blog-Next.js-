@@ -110,6 +110,9 @@ const page = ({ params }) => {
             </a>
           </div>
         </div>
+        <div>
+          <Link className='hover:text-blue-600 border border-gray px-3 py-3' href={"/"}>Back to home</Link>
+        </div>
       </div>
       <Footer />
     </>
